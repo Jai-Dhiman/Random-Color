@@ -1,5 +1,19 @@
 # Color Palette Generator Project Plan
 
+Objective:
+Introduction
+In today's world, design is everything. Choosing the right color palette for a product or website will help evoke different emotions you'd like your audience to experience. You'll build a full-fledged random color palette generator web app using Colormind API, which can be used for both web apps and mobile apps.
+Requirements
+* Set up a React App(vanilla JS or your favorite framework works too)
+* Display a random color palette when a user visits the webpage
+* Create a button for the user to generate a new color palette
+* Allow the user to click on the selected color to copy its HEX code
+* Display a notification when the selected color's HEX code has been copied
+For an extra challenge
+* Allow the user to change the color palette by pressing the 'spacebar'
+* Allow the user to copy the HEX code of the entire color palette by pressing 'C'
+
+
 ## Components Structure
 1. App (main component)
 2. ColorPalette (displays the color swatches)
