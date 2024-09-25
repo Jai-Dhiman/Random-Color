@@ -3,6 +3,7 @@ import { ColorPalette } from "./ColorPalette";
 import { GenerateButton } from "./GenerateButton";
 import { Notification } from "./Notification";
 import axios from "axios";
+import "./App.css";
 
 function App() {
   const [colors, setColors] = useState([]);
@@ -40,7 +41,7 @@ function App() {
   };
 
   return (
-    <div>
+    <div className="app-container">
       <ColorPalette colors={colors} onColorClick={handleColorCopy} />
       <GenerateButton onClick={generateNewPalette} />
       {notification && <Notification message={notification} />}
