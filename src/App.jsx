@@ -9,6 +9,15 @@ function App() {
   const [colors, setColors] = useState([]);
   const [notification, setNotification] = useState(null);
 
+  const rgbToHex = (r, g, b) =>
+    "#" +
+    [r, g, b]
+      .map((x) => {
+        const hex = x.toString(16);
+        return hex.length === 1 ? "0" + hex : hex;
+      })
+      .join("");
+
   const generateNewPalette = () => {
     // console.log("Generating New Palette");
     axios({
@@ -20,7 +29,7 @@ function App() {
       },
     })
       .then((response) => {
-        const newColors = response.data.result.map((rgb) => `rgb(${rgb.join(",")})`);
+        const newColors = response.data.result.map((rgb) => rgbToHex(...rgb));
         console.log(newColors);
         setColors(newColors);
       })
