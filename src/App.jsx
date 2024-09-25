@@ -9,7 +9,7 @@ function App() {
   const [notification, setNotification] = useState(null);
 
   const generateNewPalette = () => {
-    console.log("Generating New Palette");
+    // console.log("Generating New Palette");
     axios({
       method: "post",
       url: "http://colormind.io/api/",
@@ -19,7 +19,7 @@ function App() {
       },
     })
       .then((response) => {
-        const newColors = response.data.results;
+        const newColors = response.data.result.map((rgb) => `rgb(${rgb.join(",")})`);
         console.log(newColors);
         setColors(newColors);
       })
@@ -30,7 +30,7 @@ function App() {
   };
 
   useEffect(() => {
-    generateNewPalette;
+    generateNewPalette();
   }, []);
 
   const handleColorCopy = (color) => {
